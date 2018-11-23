@@ -1,0 +1,39 @@
+$backgroundColor: lightblue;
+body {
+  background-color: $backgroundColor;
+}
+@import './assets/stylesheets/typography.scss';
+
+
+$redesSociais: 'facebook' blue, 'youTube' red, 'orkut' black;
+
+@each $iconesRedes in $redesSociais {
+  .redes__item--#{nth($iconesRedes, 1)} {
+        color: nth($iconesRedes, 2);
+    }
+}
+
+
+
+.cores {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+  &-itens {
+    list-style: none;
+    color: rgb(71, 72, 75);
+    font-size: 18px;
+    font-weight: 700;
+  }
+  &__item {
+    $itensColors: 'verde' #05fd11, 'vermelho' #660a0a, 'laranja' rgb(177, 59, 12);
+
+    @each $itemCores in $itensColors {
+      &--#{nth($itemCores, 1)} {
+        background-color: nth($itemCores, 2);
+      }
+    }
+
+  }
+}
